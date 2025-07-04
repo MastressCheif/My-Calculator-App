@@ -1,0 +1,197 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+.calculator-wrapper {
+  padding: 10px; /* Border thickness */
+  border-radius: 14px; /* Slightly larger than calculator's radius */
+  background: linear-gradient(45deg, 
+               #ff1493,  /* Deep pink */
+              #e60073,  /* Darker pink */
+              #cc0066,  /* Even darker pink */
+              #b30059); /* Deepest pink */
+  background-size: 300% 300%;
+  animation: gradientGlow 4s ease infinite;
+  box-shadow: 0 0 15px rgba(230, 0, 115, 0.6);
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  max-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.calculator {
+    width: 100%;
+    background-color: #1a1a1a;
+    border-radius: 10px; /* Match your existing radius */
+    overflow: auto;
+    height: calc(100vh - 20px);
+    }
+
+@media (max-height: 700px) {
+  .inputBox {
+    font-size: 32px; /* Reduced from 36px */
+    height: 80px; /* Added to prevent overflow */
+  }
+  .buttons {
+    max-height: calc(100vh - 20px - 80px - 50px);
+  }
+}
+
+@media (max-height: 600px) {
+  .inputBox {
+    font-size: 28px; /* Further reduced */
+    height: 60px;
+  }
+   button {
+    padding: 12px 0;
+  }
+}
+
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.calculator-wrapper:hover {
+  animation: gradientGlow 3s ease infinite;
+  box-shadow: 0 0 25px rgba(230, 0, 115, 0.8);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 204, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 204, 0.7);
+  }
+}
+
+.display-container {
+  background-color: #1c1c1c;
+  position: relative;
+  padding: 15px 15px 0px 15px; /* Adjusted padding */
+}
+
+.display-content {
+  position: relative;
+  min-height: 70px;
+}
+
+.divider-line {
+  height: 1px;
+  background-color: #444; /* Matching your existing border color */
+  margin: 10px 0; /* Space above and below the line */
+  width: 100%;
+}
+
+.inputBox {
+  text-align: right;
+  font-size: 42px;
+  padding: 10px 10px 20px 10px; /* Extra bottom padding for erase button */
+  color: white;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  background-color: #1a1a1a;
+  height: 100px; 
+}
+
+.erase-btn-container {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+
+.erase-btn {
+  background: none;
+  border: none;
+  color: #39d353; /* Matching your operator color */
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.2s;
+}
+
+.erase-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.inputBox input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: inherit;
+  text-align: inherit;
+  outline: none;
+}
+
+ .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 8px;
+    background-color: #1c1c1c;
+    max-height: calc(100vh - 20px - 100px - 60px);
+    overflow: hidden;
+    }
+
+ button {
+      font-size: 20px;
+      padding: 16 0px;
+      border: none;
+      border-radius: 50%;
+      background-color: #333;
+      color: white;
+      transition: background 0.2s;
+      aspect-ratio: 1/1; /* Ensure perfect circles */
+    }
+
+
+.digitButton{
+    background-color: #333;
+}
+
+.operatorButton{
+    color: #39d353;
+}
+
+.ACButton{
+    color: #ff5e5e;
+}
+
+.equalButton{
+    background-color: #39d353;
+    color: #000;
+}
